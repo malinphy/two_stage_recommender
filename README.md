@@ -1,6 +1,8 @@
 # Two stage recommender
 Overview :<br/>
-Tensorflow/Keras implementation of Question answer matching system. In short, this project is designed for finding the best possible answers for related questions.
+Tensorflow/Keras implementation of two stage recommender system
+![image](https://user-images.githubusercontent.com/55249305/198728278-a7a46498-c90a-4588-9c83-a1db108f866e.png)
+
 <!-- </br> -->
 During the learning process, each question and answer were vectorized using the same Universal sentence encoder.<br/> Additional negative sample generated for each question and answer pair. Questions, answers and negative sentences were trained using siamese-BERT structure with triplet ranking loss. 
 Questions, answers and negative sentences were treated as anchor, positive and negative terms respectively. Purpose of this method is  minimizing the distance between anchor and positive pairs, while maximizing the distance between anchor and negative pairs.
