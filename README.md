@@ -5,13 +5,14 @@ Tensorflow/Keras implementation of two stage recommender system
 
 
 <!-- </br> -->
-During the learning process, each question and answer were vectorized using the same Universal sentence encoder.<br/> Additional negative sample generated for each question and answer pair. Questions, answers and negative sentences were trained using siamese-BERT structure with triplet ranking loss. 
-Questions, answers and negative sentences were treated as anchor, positive and negative terms respectively. Purpose of this method is  minimizing the distance between anchor and positive pairs, while maximizing the distance between anchor and negative pairs.
-<!-- <br/> -->After training, questionas and corresponding answers were vectorized using trained sentence encoder. 
-<!-- <br/> -->
-Vector values of each answer, loaded in vector similarity search library (scaNN).
-<!-- <br/> -->
-In prediction process, test question is vectorized using trained sentence encoder and using the vector similarity search, closest answer will be returned. User, does not have query exactly same question but another question can be used with the same or close meaning. Trained sentence encoder will vectorize the question and generate the close values to exact question in vector space. Sample process can be seen in example.
+Two- stage recommendation systems are commonly used in industy
+because of scalability. In general, these systems composed one
+retrieval part which reduce number of candidate items from all
+possible items in a very large dataset and a ranking part or 
+reranker to fine tune and sort as end recommendations.
+
+Our system composed two neural networks which serve as retrieval
+stage and ranking stage.
 
 Data :<br/>
 ----
