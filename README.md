@@ -1,7 +1,8 @@
 # Two stage recommender
 Overview :<br/>
 Tensorflow/Keras implementation of two stage recommender system
-![image](https://user-images.githubusercontent.com/55249305/198729391-48e8c510-6f1c-446a-8967-282baae3d06e.png)
+![image](https://user-images.githubusercontent.com/55249305/198822998-be0cdb8d-a18b-4040-b91a-05c5ebbedab9.png)
+
 
 <!-- </br> -->
 During the learning process, each question and answer were vectorized using the same Universal sentence encoder.<br/> Additional negative sample generated for each question and answer pair. Questions, answers and negative sentences were trained using siamese-BERT structure with triplet ranking loss. 
