@@ -1,4 +1,4 @@
-# Two stage recommender
+# Two Stage Recommender System
 Overview :<br/>
 Tensorflow/Keras implementation of two stage recommender system
 ![image](https://user-images.githubusercontent.com/55249305/198822998-be0cdb8d-a18b-4040-b91a-05c5ebbedab9.png)
@@ -13,6 +13,29 @@ reranker to fine tune and sort as end recommendations.
 
 Our system composed two neural networks which serve as retrieval
 stage and ranking stage.
+Retrieval part is treated as a next item prediction problem with
+softmax probability. Purpose of this part learning user and item
+embeddings as a function of user's history. Item embeddings were
+generated from the weights of the softmax layer. User embeddings
+were extracted from the dense layer before the softmax layer.
+Dot product of user and item embeddings have been used to determine
+top-N recommendations. From this point of view, final step of 
+retrieval stage can be considered as non-linear matrix factorization
+method. 
+
+During the serving process, item embeddings stored in vector 
+similarity search library (ScaNN). User embeddings generated through 
+the retrieval model treated as query embeddings. By using the ScaNN, 
+the closest vectors to the query embeddings can be extracted via 
+dot product. 
+
+Ranking part designed quite similar to the retrieval part. 
+At this part, outputs of the retrieval part used as inputs
+and most of the features come from the item properties. As final
+layer of the ranking stage, sigmoid function were employed and 
+output of the sigmoid function considered as probabilities of
+the items. According to calculated probabilites, items were 
+sorted and served to user.
 
 Data :<br/>
 ----
