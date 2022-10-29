@@ -1,5 +1,5 @@
-# Two Stage Recommender System
-Overview :<br/>
+# Two Stage Recommender System:
+Overview :
 Tensorflow/Keras implementation of two stage recommender system
 ![image](https://user-images.githubusercontent.com/55249305/198822998-be0cdb8d-a18b-4040-b91a-05c5ebbedab9.png)
 
@@ -36,6 +36,9 @@ layer of the ranking stage, sigmoid function were employed and
 output of the sigmoid function considered as probabilities of
 the items. According to calculated probabilites, items were 
 sorted and served to user.
+
+Total arcihecture of the system can be seen in picture. 
+For detailed information following study can be investigated (https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45530.pdf)
 
 Data :<br/>
 ----
